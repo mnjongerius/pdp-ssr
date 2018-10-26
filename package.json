@@ -1,0 +1,108 @@
+{
+  "name": "pdp-ssr",
+  "version": "0.0.1",
+  "private": true,
+  "license": "ISC",
+  "scripts": {
+    "watch": "frontend-scripts watch"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.1.1",
+    "apollo-boost": "^0.1.10",
+    "babel-preset-react": "^6.24.1",
+    "frontend-scripts": "@touchtribe/frontend-scripts^0.12.1",
+    "graphql": "^0.13.2",
+    "graphql-tag": "^2.9.2",
+    "react": "^16.4.1",
+    "react-apollo": "^2.1.9",
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1"
+  },
+  "frontend": {
+    "sourcePath": "./src",
+    "buildPath": "./dist",
+    "tasks": [
+      [
+        "javascript",
+        {
+          "source": "assets/js/main.js",
+          "dest": "assets/js",
+          "filename": "main.js",
+          "browserify": {
+            "transform": {
+              "babelify": {
+                "presets": [
+                  [
+                    "env",
+                    {
+                      "targets": {
+                        "browsers": [
+                          "last 2 versions",
+                          "IE >= 10"
+                        ]
+                      }
+                    }
+                  ],
+                  "react"
+                ],
+                "plugins": [
+                  "transform-regenerator"
+                ]
+              },
+              "envify": {}
+            },
+            "paths": [
+              "./src"
+            ]
+          }
+        }
+      ],
+      [
+        "css",
+        {
+          "source": "assets/sass/style.scss",
+          "dest": "assets/css",
+          "filename": "style.css",
+          "sass": true,
+          "less": false,
+          "autoprefixer": {
+            "browsers": [
+              "IE >= 10"
+            ]
+          }
+        }
+      ],
+      [
+        "copy",
+        {
+          "source": "index.html",
+          "dest": "./"
+        }
+      ]
+    ]
+  },
+  "frontend.development": {
+    "tasks": [
+      [
+        "browsersync",
+        {
+          "files": [
+            "./assets/css/style.css",
+            "./index.html"
+          ],
+          "basePath": "./",
+          "https": false,
+          "rewriteRules": [
+            {
+              "match": ".*",
+              "replace": "/index.html"
+            }
+          ]
+        }
+      ]
+    ]
+  },
+  "frontend.production": {
+    "buildPath": "./dist"
+  }
+}
