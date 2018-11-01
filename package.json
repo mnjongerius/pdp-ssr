@@ -4,94 +4,13 @@
   "private": true,
   "license": "ISC",
   "scripts": {
-    "watch": "npm-run-all --parallel client server",
-    "client": "frontend-scripts watch",
-    "server": "nodemon --ignore client/ --ignore dist/ --watch server server"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
-    "@touchtribe/frontend-scripts": "^0.12.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-register": "^6.26.0",
-    "express": "^4.16.4",
-    "nodemon": "^1.18.5",
-    "npm-run-all": "^4.1.3",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-router-dom": "^4.3.1"
-  },
-  "frontend": {
-    "sourcePath": "./src",
-    "buildPath": "./dist",
-    "tasks": [
-      [
-        "javascript",
-        {
-          "source": "assets/js/main.js",
-          "dest": "assets/js",
-          "filename": "main.js",
-          "browserify": {
-            "transform": {
-              "babelify": {
-                "presets": [
-                  [
-                    "env",
-                    {
-                      "targets": {
-                        "browsers": [
-                          "last 2 versions",
-                          "IE >= 10"
-                        ]
-                      }
-                    }
-                  ],
-                  "react"
-                ],
-                "plugins": [
-                  "transform-regenerator"
-                ]
-              },
-              "envify": {}
-            },
-            "paths": [
-              "./src"
-            ]
-          }
-        }
-      ],
-      [
-        "css",
-        {
-          "source": "assets/sass/style.scss",
-          "dest": "assets/css",
-          "filename": "style.css",
-          "sass": true,
-          "less": false,
-          "autoprefixer": {
-            "browsers": [
-              "IE >= 10"
-            ]
-          }
-        }
-      ]
-    ]
-  },
-  "frontend.development": {
-    "tasks": [
-      [
-        "browsersync",
-        {
-          "files": [
-            "./assets/css/style.css"
-          ],
-          "basePath": "./",
-          "https": false,
-          "proxy": "http://localhost:3006"
-        }
-      ]
-    ]
-  },
-  "frontend.production": {
-    "buildPath": "./dist"
+    "next": "^7.0.2",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
   }
 }
