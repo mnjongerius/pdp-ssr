@@ -5,7 +5,7 @@ import React from 'react'
 import express from 'express'
 import ReactDOMServer from 'react-dom/server'
 
-import App from '../src/app/components/app'
+import App from '../src/app/app'
 
 const PORT = process.env.PORT || 3006
 const app = express()
@@ -13,7 +13,8 @@ const app = express()
 app.use(express.static('./dist'))
 
 app.get('/*', (req, res) => {
-  const app = ReactDOMServer.renderToString(<App/>)
+  console.log('req', req.path)
+  const app = ReactDOMServer.renderToString(<App onServer path={req.path}/>)
 
   const indexFile = path.resolve('./src/index.html')
   fs.readFile(indexFile, 'utf8', (err, data) => {
