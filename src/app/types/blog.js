@@ -1,0 +1,3 @@
+export const BLOG_LOAD_INIT = 'BLOG_LOAD_INIT'
+export const BLOG_LOAD_SUCCESS = 'BLOG_LOAD_SUCCESS'
+export const BLOG_LOAD_ERROR = 'BLOG_LOAD_ERROR'
