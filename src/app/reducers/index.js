@@ -1,5 +1,4 @@
-import { applyMiddleware, combineReducers, createStore } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension'
+import { combineReducers } from 'redux'
 
 const initialState = {
   blog: {
@@ -16,16 +15,6 @@ const blog = (state = initialState.blog, action) => {
   }
 }
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   blog
 })
-
-export function configureStore (initialState) {
-  return createStore(
-    rootReducer,
-    initialState,
-    composeWithDevTools(
-      applyMiddleware()
-    )
-  )
-}

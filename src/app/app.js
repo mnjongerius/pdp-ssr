@@ -3,7 +3,7 @@ import { BrowserRouter, StaticRouter, Route } from 'react-router-dom'
 import Home from './containers/home'
 import About from './containers/about'
 import { Provider } from 'react-redux'
-import { configureStore } from './reducers'
+import { configureStore } from './store'
 
 const store = configureStore()
 

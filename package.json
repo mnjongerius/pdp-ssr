@@ -9,6 +9,9 @@
     "server": "nodemon --ignore client/ --ignore dist/ --watch server server"
   },
   "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/register": "^7.0.0",
     "@touchtribe/frontend-scripts": "^0.12.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
@@ -20,7 +23,8 @@
     "react-dom": "^16.4.1",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-saga": "^0.16.2"
   },
   "devDependencies": {
     "redux-devtools-extension": "^2.13.7"
@@ -52,9 +56,7 @@
                   ],
                   "react"
                 ],
-                "plugins": [
-                  "transform-regenerator"
-                ]
+                "plugins": []
               },
               "envify": {}
             },
