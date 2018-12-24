@@ -13,7 +13,7 @@ const app = express()
 app.use(express.static('./dist'))
 
 app.get('/*', (req, res) => {
-  console.log('req', req.path)
+  // console.log('req', req.path)
   const app = ReactDOMServer.renderToString(<App onServer path={req.path}/>)
 
   const indexFile = path.resolve('./src/index.html')

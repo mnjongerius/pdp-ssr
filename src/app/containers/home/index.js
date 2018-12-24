@@ -1,7 +1,15 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-export default class Home extends React.Component {
+class Home extends React.Component {
   render () {
-    return 'Home'
+    const {state} = this.props
+    return JSON.stringify(state)
   }
 }
+
+export default connect(
+  state => ({
+    state
+  })
+)(Home)
