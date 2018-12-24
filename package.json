@@ -15,7 +15,6 @@
     "@touchtribe/frontend-scripts": "^0.12.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "babel-register": "^6.26.0",
     "express": "^4.16.4",
     "nodemon": "^1.18.5",
     "npm-run-all": "^4.1.3",
