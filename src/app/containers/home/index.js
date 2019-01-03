@@ -1,10 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import Container from '../../components/container'
 
 class Home extends React.Component {
   render () {
     const {state} = this.props
-    return JSON.stringify(state)
+    return (
+      <Container>
+        {JSON.stringify(state)}
+      </Container>
+    )
   }
 }
 
