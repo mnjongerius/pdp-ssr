@@ -5,6 +5,8 @@
   "license": "ISC",
   "scripts": {
     "watch": "npm-run-all --parallel client server",
+    "serve": "node server",
+    "build": "frontend-scripts build",
     "client": "frontend-scripts watch",
     "server": "nodemon --ignore client/ --ignore dist/ --watch server server"
   },
