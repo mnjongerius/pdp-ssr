@@ -3,6 +3,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import { rootReducer } from '../reducers'
 import createSagaMiddleware from 'redux-saga'
 import { initSagas, rootSaga } from '../sagas'
+import { blogLoadInit } from '../actions'
 
 const sagaMiddleware = createSagaMiddleware()
 
@@ -18,6 +19,7 @@ export function configureStore (initialState) {
   )
   initSagas(sagaMiddleware)
   sagaMiddleware.run(rootSaga)
+  store.dispatch(blogLoadInit())
 
   return store
 }

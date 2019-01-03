@@ -13,7 +13,7 @@ export default (state = initialState, action) => {
     case TYPES.BLOG.BLOG_LOAD_INIT:
       return { ...state, loading: true }
     case TYPES.BLOG.BLOG_LOAD_SUCCESS:
-      return { ...state, posts: action.posts }
+      return { ...state, loading: false, posts: action.posts }
     case TYPES.BLOG.BLOG_LOAD_ERROR:
       return { ...state, error: action.error }
     default:
