@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Container from '../../components/container'
 import { getBlogEntries } from '../../selectors'
+import { Link } from 'react-router-dom'
 
 class Home extends React.Component {
   render () {
@@ -14,10 +15,12 @@ class Home extends React.Component {
     )
   }
 
-  _renderPost = ({ title }) => {
+  _renderPost = ({ id, title }) => {
     return (
-      <div>
-        {title}
+      <div key={id}>
+        <Link to={`/post/${id}`}>
+          {title}
+        </Link>
       </div>
     )
   }
