@@ -16,6 +16,7 @@
     "@material-ui/icons": "^3.0.1",
     "@touchtribe/frontend-scripts": "^0.12.1",
     "axios": "^0.18.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "express": "^4.16.4",
@@ -58,7 +59,9 @@
                   ],
                   "react"
                 ],
-                "plugins": []
+                "plugins": [
+                  "transform-class-properties"
+                ]
               },
               "envify": {}
             },

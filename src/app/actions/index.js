@@ -1,9 +1,10 @@
 import TYPES from '../types'
 
 export function blogLoadInit () {
+  console.log('creating blogLoadInit')
   return { type: TYPES.BLOG.BLOG_LOAD_INIT }
 }
 
-export function blogLoadSuccess (posts) {
-  return { type: TYPES.BLOG.BLOG_LOAD_SUCCESS, posts }
+export function blogLoadSuccess (entries) {
+  return { type: TYPES.BLOG.BLOG_LOAD_SUCCESS, entries }
 }
